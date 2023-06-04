@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/litera/bootstrap.min.css"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Personal Balance</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span class="navbar-brand title" href="#">AVBB</span>
+      </div>
+    </nav>
+   
+
+    <div class="container-fluid d-flex flex-column align-items-center">
+      <span>Tu saldo</span>
+      <h1>$<span id="balance">0</span></h1>
+    </div>
+
+    <section class="d-flex flex-column justify-content-center p-3">
+      <div class="card mt-3">
+        <h3 class="d-flex justify-content-between p-3 fs-5">
+          Ingresos <i>$<span id="deposits">0</span></i>
+        </h3>
+      </div>
+      <div class="card mt-3">
+        <h3 class="d-flex justify-content-between p-3 fs-5">
+          Gastos <i>$<span id="expenses">0</span></i>
+        </h3>
+      </div>
+    </section>
+
+    <section id="btnsSection" class="mb-5">
+      <form
+        class="d-flex align-items-center flex-wrap justify-content-center mt-5 gap-3"
+      >
+        <div class="button">
+          <button id="btnDeposits" type="button" class="btn btn-lg">
+            <i id="btnDeposits" class="bi bi-plus-circle-fill"></i>
+          </button>
+          Depositar
+        </div>
+        <div class="button">
+          <button id="btnExpense" type="button" class="btn btn-lg">
+            <i id="btnExpense"class="bi bi-dash-circle-fill"></i>
+          </button>
+          Retirar
+        </div>
+        <div class="button">
+          <button  id="btnHistory" type="button" class="btn btn-lg">
+            <i id="btnHistory"class="bi bi-clock-history"></i>
+          </button>
+          Movimientos
+        </div>
+        <div class="button">
+          <button type="button" class="btn btn-lg">
+            <i class="bi bi-gear-fill"></i>
+          </button>
+          Ajustes
+        </div>
+      </form>
+    </section>
+
+    <section id="addBudgetSection" class="d-none">
+      <h5 class="m-3">Depositar</h5>
+
+      <form id="formDeposits" class="p-3 d-flex flex-column align-items-center">
+        <div class="mb-3">
+          <label for="budget" class="form-label">Cantidad</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputAddBudget"
+            placeholder="$"
+          />
+        </div>
+        <button id="btnAddBudget" type="submit" class="btn btn-lg">Depositar</button>
+      </form>
+    </section>
+    <section id="expensesSection" class="d-none">
+      <h5 class="m-3">Retirar</h5>
+
+      <form id="formExpenses" class="p-3 d-flex flex-column align-items-center">
+        <div class="mb-3">
+          <label for="budget" class="form-label">Cantidad</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputExpenseBudget"
+            placeholder="$"
+          />
+          <div class="form-text">
+            No puedes retirar mas de $<span id="warning">0</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="concept" class="form-label">Concepto</label>
+          <input type="text" class="form-control"  placeholder="Supermercado" id="inputExpenseConcept"/>
+        </div>
+        <button id="btnAddExpense" type="submit" class="btn btn-lg">Retirar</button>
+      </form>
+    </section>
+
+    <section id="historySection" class="p-3 d-none">
+      <h5 class="m-3">Movimientos</h5>
+      <div class="history-item">
+        <p class="history-item-concept d-flex justify-content-around">
+          Ice cream <span class="history-item-budget">$100</span>
+        </p>
+      </div>
+      <div class="history-item">
+        <p class="history-item-concept d-flex justify-content-around">
+          Ice cream <span class="history-item-budget">$100</span>
+        </p>
+      </div>
+      <div class="history-item">
+        <p class="history-item-concept d-flex justify-content-around">
+          Ice cream <span class="history-item-budget">$100</span>
+        </p>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
